@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
+import ToDoList from 'components/ToDoList';
 
 export default function MainPage() {
   const [tasks, setTasks] = useState<string[]>([
@@ -13,7 +14,7 @@ export default function MainPage() {
       <Text style={styles.title}>To-Do List</Text>
       
       {/* Pass tasks as a prop */}
-      {/* Update Code Here */}
+      <ToDoList tasks={tasks} />
     </View>
   );
 }
@@ -25,17 +26,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  item: {
-    fontSize: 18,
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
+    marginBottom: 10
+  }
 });
+
+export default MainPage;
